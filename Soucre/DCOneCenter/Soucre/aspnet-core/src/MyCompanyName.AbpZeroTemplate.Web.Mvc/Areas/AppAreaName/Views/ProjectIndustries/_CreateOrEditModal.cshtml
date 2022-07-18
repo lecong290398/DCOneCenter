@@ -1,0 +1,65 @@
+﻿
+@using System.Globalization
+@using MyCompanyName.AbpZeroTemplate.Web.Areas.AppAreaName.Models.Common.Modals
+@using MyCompanyName.AbpZeroTemplate.Web.Areas.AppAreaName.Models.ProjectIndustries
+@model CreateOrEditProjectIndustrieModalViewModel
+@using Abp.Extensions
+@await Html.PartialAsync("~/Areas/AppAreaName/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(Model.IsEditMode ? (L("EditProjectIndustrie")) : L("CreateNewProjectIndustrie")))
+
+<div class="modal-body">
+    <div id="ProjectIndustrieInformationsTab">
+        <form name="ProjectIndustrieInformationsForm" role="form" novalidate class="form-validation">
+
+            @if (Model.IsEditMode)
+            {
+            <input type="hidden" name="id" value="@Model.ProjectIndustrie.Id" />
+            }
+
+            <div class="my-3">
+                <label class="form-label" for="ProjectIndustrie_NameIndustries">@L("NameIndustries")</label>
+                <input class="form-control" id="ProjectIndustrie_NameIndustries" value="@Model.ProjectIndustrie.NameIndustries" type="text" name="nameIndustries" required />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="ProjectIndustrie_SumaryIndustries">@L("SumaryIndustries")</label>
+                <input class="form-control" id="ProjectIndustrie_SumaryIndustries" value="@Model.ProjectIndustrie.SumaryIndustries" type="text" name="sumaryIndustries" />
+            </div>
+
+            <label class="form-check form-check-custom">
+                <input id="ProjectIndustrie_IsActive" name="isActive" value="true" type="checkbox" class="form-check-input" @Html.Raw(Model.ProjectIndustrie.IsActive ?"checked=\"checked\"":"") />
+                <span class="form-check-label">
+                    @L("IsActive")
+                </span>
+            </label>
+
+            <div class="my-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroupFileAddon01">@L("Logo")</span>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="ProjectIndustrie_Logo" id="ProjectIndustrie_Logo" aria-describedby="inputGroupFileAddon01" accept="@Model.LogoFileAcceptedTypes" />
+                        <label class="custom-file-label" for="@L(" Logo")" id="ProjectIndustrie_LogoLabel">@L("ChooseAFile")</label>
+                    </div>
+                </div>
+
+                <div id="div_current_file" style="background-color: #e5e5e5; padding: 5px @(Model.LogoFileName.IsNullOrEmpty()?" ;display:none":"")">
+                    <span class="font-weight-bold">@L("CurrentFile") :</span>
+                    <div class="alert alert-custom alert-white alert-bold m-1" role="alert">
+                        <div class="alert-text">
+                             <a href="@(" /view-resources/Views/DCOneCenter/ImagesProjectIndustries/" + Model.ProjectIndustrie.Logo + ".png")" target="_blank">@Model.LogoFileName</a>
+                        </div>
+                        <div class="alert-close">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="ProjectIndustrie_Logo_Remove">
+                                <span aria-hidden="true">
+                                    <i class="la la-close fa-1x"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/AppAreaName/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

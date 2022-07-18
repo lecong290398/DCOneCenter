@@ -1,0 +1,101 @@
+﻿@using MyCompanyName.AbpZeroTemplate.Web.Areas.AppAreaName.Models.Common.Modals
+@using MyCompanyName.AbpZeroTemplate.Web.Areas.AppAreaName.Models.Projects
+@model ProjectViewModel
+
+@await Html.PartialAsync("~/Areas/AppAreaName/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("Details")))
+
+<div class="modal-body">
+    <div id="ProjectInformationsTab">
+
+        <div class="row">
+            <div class="col-6 mb-3">
+                <h6>@L("ProjectName") :</h6>
+                @Model.Project.ProjectName
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("TokenShortname") :</h6>
+                @Model.Project.TokenShortname
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("TotalTokenSupply") :</h6>
+                @Model.Project.TotalTokenSupply
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("ReleaseYear") :</h6>
+                @Model.Project.ReleaseYear
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("ProjectSummary") :</h6>
+                @Model.Project.ProjectSummary
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("ProjectDescription") :</h6>
+                @Model.Project.ProjectDescription
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("WebsiteURL") :</h6>
+                @Model.Project.WebsiteURL
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("Whitepaper_URL_FAQ") :</h6>
+                @Model.Project.Whitepaper_URL_FAQ
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("TwitterURL") :</h6>
+                @Model.Project.TwitterURL
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("Discord") :</h6>
+                @Model.Project.Discord
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("Reddit") :</h6>
+                @Model.Project.Reddit
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("Facebook") :</h6>
+                @Model.Project.Facebook
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("Telegram") :</h6>
+                @Model.Project.Telegram
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("YourName") :</h6>
+                @Model.Project.YourName
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("YourEmailaddress") :</h6>
+                @Model.Project.YourEmailaddress
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("IsPormoted") :</h6>
+                @Model.Project.IsPormoted
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("IsActive") :</h6>
+                @Model.Project.IsActive
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("Logo") :</h6>
+                @if (Model.Project.Logo.HasValue)
+                {
+                    <img style=" width: 100%; height: auto;" src="@(" /view-resources/Views/DCOneCenter/ImagesProject/" + Model.Project.Logo + ".png")" alt="@(Model.Project.Logo)" />
+                }
+            </div>
+
+            <div class="col-6 mb-3">
+                <h6>(@L("ProjectStatu")) @L("NameStatus") :</h6>
+                @Model.ProjectStatuNameStatus
+            </div>
+            <div class="col-6 mb-3">
+                <h6>(@L("ProjectIndustrie")) @L("NameIndustries") :</h6>
+                @Model.ProjectIndustrieNameIndustries
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/AppAreaName/Views/Common/Modals/_ModalFooterWithClose.cshtml")

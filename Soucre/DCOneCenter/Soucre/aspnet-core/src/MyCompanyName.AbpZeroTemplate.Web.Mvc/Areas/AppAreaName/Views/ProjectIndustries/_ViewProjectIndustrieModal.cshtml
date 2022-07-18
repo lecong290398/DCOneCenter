@@ -1,0 +1,38 @@
+﻿
+@using MyCompanyName.AbpZeroTemplate.Web.Areas.AppAreaName.Models.Common.Modals
+@using MyCompanyName.AbpZeroTemplate.Web.Areas.AppAreaName.Models.ProjectIndustries
+@model ProjectIndustrieViewModel
+
+@await Html.PartialAsync("~/Areas/AppAreaName/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("Details")))
+
+<div class="modal-body">
+    <div id="ProjectIndustrieInformationsTab">
+
+        <div class="row">
+            <div class="col-6 mb-3">
+                <h6>@L("NameIndustries") :</h6>
+                @Model.ProjectIndustrie.NameIndustries
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("SumaryIndustries") :</h6>
+                @Model.ProjectIndustrie.SumaryIndustries
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("IsActive") :</h6>
+                @Model.ProjectIndustrie.IsActive
+            </div>
+            <div class="col-6 mb-3">
+                <h6>@L("Logo") :</h6>
+                @if (Model.ProjectIndustrie.Logo.HasValue)
+                {
+                 <img style=" width: 100%; height: auto;" src="@(" /view-resources/Views/DCOneCenter/ImagesProjectIndustries/" + Model.ProjectIndustrie.Logo + ".png")" alt="@(Model.ProjectIndustrie.Logo)" />
+
+                }
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/AppAreaName/Views/Common/Modals/_ModalFooterWithClose.cshtml")

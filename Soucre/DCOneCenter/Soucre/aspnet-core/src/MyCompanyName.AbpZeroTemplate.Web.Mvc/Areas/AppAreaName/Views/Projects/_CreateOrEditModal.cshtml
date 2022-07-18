@@ -1,0 +1,147 @@
+﻿
+@using System.Globalization
+@using MyCompanyName.AbpZeroTemplate.Web.Areas.AppAreaName.Models.Common.Modals
+@using MyCompanyName.AbpZeroTemplate.Web.Areas.AppAreaName.Models.Projects
+@model CreateOrEditProjectModalViewModel
+@using Abp.Extensions
+@await Html.PartialAsync("~/Areas/AppAreaName/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(Model.IsEditMode ? (L("EditProject")) : L("CreateNewProject")))
+
+<div class="modal-body">
+    <div id="ProjectInformationsTab">
+        <form name="ProjectInformationsForm" role="form" novalidate class="form-validation">
+
+            @if (Model.IsEditMode)
+            {
+            <input type="hidden" name="id" value="@Model.Project.Id" />
+            }
+
+            <div class="my-3">
+                <label class="form-label" for="projectStatuId">@L("ProjectStatu")</label>
+                @Html.DropDownList("projectStatuId", new SelectList(Model.ProjectProjectStatuList,"Id","DisplayName", (Model.IsEditMode ? Model.Project.ProjectStatuId.ToString() : "")),@L("SelectAProjectStatu"), new { @class = "form-control" , @required="required" })
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="projectIndustrieId">@L("ProjectIndustrie")</label>
+                @Html.DropDownList("projectIndustrieId", new SelectList(Model.ProjectProjectIndustrieList,"Id","DisplayName", (Model.IsEditMode ? Model.Project.ProjectIndustrieId.ToString() : "")),@L("SelectAProjectIndustrie"), new { @class = "form-control" , @required="required" })
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_ProjectName">@L("ProjectName")</label>
+                <input class="form-control" id="Project_ProjectName" value="@Model.Project.ProjectName" type="text" name="projectName" required maxlength="@MyCompanyName.AbpZeroTemplate.Projects.ProjectConsts.MaxProjectNameLength" minlength="@MyCompanyName.AbpZeroTemplate.Projects.ProjectConsts.MinProjectNameLength" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_TokenShortname">@L("TokenShortname")</label>
+                <input class="form-control" id="Project_TokenShortname" value="@Model.Project.TokenShortname" type="text" name="tokenShortname" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_TotalTokenSupply">@L("TotalTokenSupply")</label>
+                <input class="form-control" id="Project_TotalTokenSupply" value="@Model.Project.TotalTokenSupply" type="text" name="totalTokenSupply" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_ReleaseYear">@L("ReleaseYear")</label>
+                <input class="form-control" id="Project_ReleaseYear" value="@Model.Project.ReleaseYear" type="text" name="releaseYear" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_ProjectSummary">@L("ProjectSummary")</label>
+                <input class="form-control" id="Project_ProjectSummary" value="@Model.Project.ProjectSummary" type="text" name="projectSummary" required maxlength="@MyCompanyName.AbpZeroTemplate.Projects.ProjectConsts.MaxProjectSummaryLength" minlength="@MyCompanyName.AbpZeroTemplate.Projects.ProjectConsts.MinProjectSummaryLength" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_ProjectDescription">@L("ProjectDescription")</label>
+                <input class="form-control" id="Project_ProjectDescription" value="@Model.Project.ProjectDescription" type="text" name="projectDescription" required maxlength="@MyCompanyName.AbpZeroTemplate.Projects.ProjectConsts.MaxProjectDescriptionLength" minlength="@MyCompanyName.AbpZeroTemplate.Projects.ProjectConsts.MinProjectDescriptionLength" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_WebsiteURL">@L("WebsiteURL")</label>
+                <input class="form-control" id="Project_WebsiteURL" value="@Model.Project.WebsiteURL" type="text" name="websiteURL" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_Whitepaper_URL_FAQ">@L("Whitepaper_URL_FAQ")</label>
+                <input class="form-control" id="Project_Whitepaper_URL_FAQ" value="@Model.Project.Whitepaper_URL_FAQ" type="text" name="whitepaper_URL_FAQ" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_TwitterURL">@L("TwitterURL")</label>
+                <input class="form-control" id="Project_TwitterURL" value="@Model.Project.TwitterURL" type="text" name="twitterURL" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_Discord">@L("Discord")</label>
+                <input class="form-control" id="Project_Discord" value="@Model.Project.Discord" type="text" name="discord" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_Reddit">@L("Reddit")</label>
+                <input class="form-control" id="Project_Reddit" value="@Model.Project.Reddit" type="text" name="reddit" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_Facebook">@L("Facebook")</label>
+                <input class="form-control" id="Project_Facebook" value="@Model.Project.Facebook" type="text" name="facebook" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_Telegram">@L("Telegram")</label>
+                <input class="form-control" id="Project_Telegram" value="@Model.Project.Telegram" type="text" name="telegram" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_YourName">@L("YourName")</label>
+                <input class="form-control" id="Project_YourName" value="@Model.Project.YourName" type="text" name="yourName" />
+            </div>
+
+            <div class="my-3">
+                <label class="form-label" for="Project_YourEmailaddress">@L("YourEmailaddress")</label>
+                <input class="form-control" id="Project_YourEmailaddress" value="@Model.Project.YourEmailaddress" type="text" name="yourEmailaddress" />
+            </div>
+
+            <label class="form-check form-check-custom">
+                <input id="Project_IsPormoted" name="isPormoted" type="checkbox" value="true" class="form-check-input" @Html.Raw(Model.Project.IsPormoted ?"checked=\"checked\"":"") />
+                <span class="form-check-label">
+                    @L("IsPormoted")
+                </span>
+            </label>
+
+            <label class="form-check form-check-custom">
+                <input id="Project_IsActive" name="isActive" type="checkbox" value="true" class="form-check-input" @Html.Raw(Model.Project.IsActive ?"checked=\"checked\"":"") />
+                <span class="form-check-label">
+                    @L("IsActive")
+                </span>
+            </label>
+
+            <div class="my-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroupFileAddon01">@L("Logo")</span>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="Project_Logo" id="Project_Logo" aria-describedby="inputGroupFileAddon01" accept="@Model.LogoFileAcceptedTypes" />
+                        <label class="custom-file-label" for="@L(" Logo")" id="Project_LogoLabel">@L("ChooseAFile")</label>
+                    </div>
+                </div>
+
+                <div id="div_current_file" style="background-color: #e5e5e5; padding: 5px @(Model.LogoFileName.IsNullOrEmpty()?" ;display:none":"")">
+                    <span class="font-weight-bold">@L("CurrentFile") :</span>
+                    <div class="alert alert-custom alert-white alert-bold m-1" role="alert">
+                        <div class="alert-text">
+                            <a href="@(" /view-resources/Views/DCOneCenter/ImagesProject/" + Model.Project.Logo + ".png")" target="_blank">@Model.LogoFileName</a>
+                        </div>
+                        <div class="alert-close">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="Project_Logo_Remove">
+                                <span aria-hidden="true">
+                                    <i class="la la-close fa-1x"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@await Html.PartialAsync("~/Areas/AppAreaName/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")
