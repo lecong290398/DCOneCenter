@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using MyCompanyName.AbpZeroTemplate.ProjectIndustries;
 using MyCompanyName.AbpZeroTemplate.Projects;
 using MyCompanyName.AbpZeroTemplate.Storage;
+using MyCompanyName.AbpZeroTemplate.Web.Models.Ecosystem;
 using MyCompanyName.AbpZeroTemplate.Web.Models.ProductIndustres;
 using MyCompanyName.AbpZeroTemplate.Web.Models.Project;
 using System;
@@ -81,6 +82,28 @@ namespace MyCompanyName.AbpZeroTemplate.Web.Controllers
             catch (UserFriendlyException ex)
             {
                 return new ProjectIndustresIndexCacheModel(new ErrorInfo(ex.Message));
+            }
+        }
+
+
+        public async Task<IActionResult> Ecosystem()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public async Task<EcosystemCacheModel> LoadDataEcosystemPage()
+        {
+            try
+            {
+                var DataEcosystem = await _projectsClientAppService.GetDataEcosystemProject();
+
+                return new EcosystemCacheModel(DataEcosystem);
+            }
+            catch (UserFriendlyException ex)
+            {
+                return new EcosystemCacheModel(new ErrorInfo(ex.Message));
             }
         }
 

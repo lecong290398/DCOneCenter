@@ -12,6 +12,7 @@ namespace MyCompanyName.AbpZeroTemplate.Projects
     {
 
         Task<ProjectIndexOutput> GetDataProjectIndex();
+        Task<List<GetAllEcosystemProjectDto>> GetDataEcosystemProject();
 
     }
 }

@@ -92,8 +92,34 @@ namespace MyCompanyName.AbpZeroTemplate.Projects
             return result;
         }
 
+        public async Task<List<GetAllEcosystemProjectDto>> GetDataEcosystemProject()
+        {
+            var result = new List<GetAllEcosystemProjectDto>();
+            var listIndustres = await _lookup_projectIndustrieRepository.GetAll().ToListAsync();
 
-       
+            foreach (var itemIndustre in listIndustres)
+            {
+                var listProject = await _projectRepository.GetAll()
+                .Where(c => c.IsActive == true && c.ProjectIndustrieFk.Id == itemIndustre.Id).ToListAsync();
+                var modelRecord = new GetAllEcosystemProjectDto();
+                modelRecord.NameIndustres = itemIndustre.NameIndustries;
 
+                if (listProject.Count() > 0)
+                {
+                    foreach (var itemPrject in listProject)
+                    {
+                        var ProjectImportRecord = new PrjectInfor
+                        {
+                            Logo = itemPrject.Logo + ".png",
+                            NameProject = itemPrject.ProjectName
+                        };
+                        modelRecord.ListProject.Add(ProjectImportRecord);
+                    }
+
+                    result.Add(modelRecord);
+                }
+            }
+            return result;
+        }
     }
 }
