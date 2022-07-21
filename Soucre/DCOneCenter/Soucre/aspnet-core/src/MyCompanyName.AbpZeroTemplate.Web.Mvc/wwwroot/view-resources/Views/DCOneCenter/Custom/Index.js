@@ -13,7 +13,7 @@
                     for (var i = 0; i < resp.result.dataProjects.promoteD_PROJECTS.length; i++) {
                         var data = resp.result.dataProjects.promoteD_PROJECTS;
                         var html = '<div role="listitem" class="homepromote w-dyn-item">' +
-                            '                            <a href="projects/numetic.html"' +
+                            '                            <a href="/"' +
                             '                           class="homecard w-inline-block">' +
                             '                                <div class="cardheader">' +
                             '                                    <div style="background-image:url(' + data[i].logo + ')"' +
@@ -40,7 +40,7 @@
                     for (var i = 0; i < resp.result.dataProjects.populaR_PROJECTS.length; i++) {
                         var data = resp.result.dataProjects.populaR_PROJECTS;
                         var html = '<div role="listitem" class="homepromote w-dyn-item">' +
-                            '                            <a href="projects/numetic.html"' +
+                            '                            <a href="/"' +
                             '                           class="homecard w-inline-block">' +
                             '                                <div class="cardheader">' +
                             '                                    <div style="background-image:url(' + data[i].logo + ')"' +
@@ -67,7 +67,7 @@
                     for (var i = 0; i < resp.result.dataProjects.recentlY_ADDED.length; i++) {
                         var data = resp.result.dataProjects.recentlY_ADDED;
                         var html = '<div role="listitem" class="homepromote w-dyn-item">' +
-                            '                            <a href="projects/numetic.html"' +
+                            '                            <a href="/"' +
                             '                           class="homecard w-inline-block">' +
                             '                                <div class="cardheader">' +
                             '                                    <div style="background-image:url(' + data[i].logo + ')"' +
@@ -115,7 +115,7 @@ $.ajax({
 
 
                     var html = '<div role="listitem" class="w-dyn-item">' +
-                        '                        <a href="collections/community.html"' +
+                        '                        <a href="/"' +
                         '                           class="cardcategory w-inline-block">' +
                         '                            <img src="/view-resources/Views/DCOneCenter/ImagesProjectIndustries/' + resp.result.dataProjectsIndustres[i].projectIndustrie.logo+'.png"' +
                         '                                 loading="lazy" alt="" class="collectionicon" />' +

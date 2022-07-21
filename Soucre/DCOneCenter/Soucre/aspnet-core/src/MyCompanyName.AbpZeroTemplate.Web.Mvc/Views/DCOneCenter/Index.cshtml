@@ -94,7 +94,7 @@
                             <a href="explore.html"
                                class="dropdown-link-mobile w-inline-block">
                                 <div class="icon-wrap-2">
-                                    <img src="https://uploads-ssl.webflow.com/60d82738f23901b8a1a58ad1/61b4dfc59bed366c3df0ac35_explore.svg"
+                                    <img src=""
                                          alt="" />
                                 </div>
                                 <div class="nav-content-wrap">
@@ -1073,8 +1073,9 @@
                     </div>
                 </div>
                 <div class="leftmenu">
-                    <a href="index.html" aria-current="page" class="brand-2 w-nav-brand w--current">
-                        <img src="https://uploads-ssl.webflow.com/60d82738f23901b8a1a58ad1/6126bda607a3f16b980971f3_LogoCC.svg"
+                    <a href="/" aria-current="page" class="brand-2 w-nav-brand w--current">
+                        <img style="max-width:50%"
+                   src="~/view-resources/Views/DCOneCenter/logoDCCoin.svg"
                              loading="lazy" alt="" class="logodark" />
                     </a>
                     <nav role="navigation" class="nav-menu w-nav-menu">
@@ -1132,7 +1133,7 @@
                         <a href="/DCOneCenter/Ecosystem" class="nav-link-light w-nav-link">Ecosystem</a>
                         
                         
-                        <a href="add-project.html" class="nav-link-light w-nav-link">Add a project</a>
+                        <a href="/DCOneCenter/AddProject" class="nav-link-light w-nav-link">Add a project</a>
                     </nav>
                 </div>
                 <div class="rightmenu">
@@ -2088,9 +2089,14 @@
                         <div class="paragraph bottom-space on-dark">
                             Our mission is to make information more accessible by providing
                             an overview of all projects and dApps building on Cardano.
-                        </div><a href="explore.html"
+                        </div>
+                        <div hidden> 
+  <a href="explore.html"
                                  class="button-big w-button">Explore all projects</a><a href="cardano-ecosystem-interactive-map.html"
                                                                                         class="button-big light w-button">Cardano Ecosystem</a>
+</div>
+                        
+                      
                         <div class="tagsrow">
                             <div class="collection-list-wrapper-3 w-dyn-list">
                                 <div role="list" class="w-dyn-items">
@@ -2141,7 +2147,7 @@
     <div class="projectsection wf-section">
         <div class="container herooverflow w-container">
             <div class="div-block-24 w-clearfix">
-                <h2 class="highlightedtitle">Promoted Projects</h2><a href="promote-your-project.html"
+                <h2 class="highlightedtitle">Promoted Projects</h2><a href="/DCOneCenter/Promote"
                                                                       class="link-block-3 w-inline-block w-clearfix">
                     <h2 class="promotenow">Promote now</h2>
                 </a>
@@ -2160,7 +2166,7 @@
    <div class="container w-container">
       <div class="div-block-24 w-clearfix">
          <h2 class="recently-added">Popular projects</h2>
-         <a href="collections/popular.html" class="link-block-3 w-inline-block w-clearfix">
+         <a href="/" class="link-block-3 w-inline-block w-clearfix">
             <h2 class="promotenow">Show all</h2>
          </a>
       </div>
@@ -2178,7 +2184,7 @@
    <div class="container w-container">
       <div class="div-block-24 w-clearfix">
          <h2 class="recently-added">RECENTLY ADDED</h2>
-         <a href="collections/popular.html" class="link-block-3 w-inline-block w-clearfix">
+         <a href="/" class="link-block-3 w-inline-block w-clearfix">
             <h2 class="promotenow">Show all</h2>
          </a>
       </div>
@@ -2214,12 +2220,13 @@
     <footer id="footer" class="footer wf-section">
         <div class="container w-container">
             <div class="footer-flex-container">
-                <a href="index.html" aria-current="page"
-                   class="footer-logo-link w--current">
-                    <img src="~/view-resources/Views/DCOneCenter/uploads-ssl.webflow.com/60d82738f23901b8a1a58ad1/612a78f93a572441a796ce47_LogoIcon.png" alt=""
+                <a href="/" aria-current="page"
+                   class="footer-logo-link w--current"  style="max-height: 70px; max-width: 20%;">
+                    <img 
+                   src="~/view-resources/Views/DCOneCenter/logoDCCoin.svg" alt=""
                          class="footer-image" />
                 </a>
-                <div class="div-block-20">
+                <div class="div-block-20" hidden>
                     <h2 class="footer-heading">Explore Cardano</h2>
                     <ul role="list" class="w-list-unstyled">
                         <li>
@@ -2228,24 +2235,24 @@
                     </ul>
                 </div>
                 <div class="div-block-20">
-                    <h2 class="footer-heading">Cardano Cube</h2>
+                    <h2 class="footer-heading">DC One Crypto</h2>
                     <ul role="list" class="w-list-unstyled">
                         <li><a href="about-us.html" class="footer-link">About us</a></li>
                         <li>
-                            <a href="promote-your-project.html" class="footer-link">Promote your project</a><a href="partner-contact.html" class="footer-link">Become a partner</a>
+                            <a href="/DCOneCenter/Promote" class="footer-link">Promote your project</a><a  href="/DCOneCenter/PartnerContact" class="footer-link">Become a partner</a>
                         </li>
-                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="/DCOneCenter/Contact" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
                 <div class="div-block-20">
                     <h2 class="footer-heading">Add a project</h2>
                     <ul role="list" class="w-list-unstyled">
-                        <li><a href="add-project.html" class="footer-link">Add a project</a></li>
+                        <li><a href="/DCOneCenter/AddProject" class="footer-link">Add a project</a></li>
                     </ul>
                 </div>
             </div>
             <div>
-                <div class="html-embed w-embed w-script">
+                <div class="html-embed w-embed w-script" hidden>
                     <a href="https://twitter.com/cardanocube?ref_src=twsrc%5Etfw"
                        class="twitter-follow-button" data-show-count="false">Follow  ＠cardanocube</a>
                     <script async src="~/view-resources/Views/DCOneCenter/platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -2257,7 +2264,7 @@
                         * The Content on this website is for informational purposes only, you should not
                         construe any such information or other material as legal, tax, investment, financial, or other
                         advice.
-                    </strong><strong class="bold-text"><br />‍<br /></strong>Copyright © 2021 Cardano Cube. All rights
+                    </strong><strong class="bold-text"><br />‍<br /></strong>Copyright © 2022 DC One Crypto. All rights
                     reserved.
                 </div>
                 <div class="div-block-35">

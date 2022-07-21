@@ -27,7 +27,7 @@ $.ajax({
                     var body = '';
                     for (var j = 0; j < resp.result.dataProjectsIndustres[i].listProject.length; j++) {
                         var contenbody = '  <div role="listitem" class="collection-item-5 w-dyn-item">' +
-                            '                  <a href="projects/paradiso.html" class="projectlinkblock w-inline-block">' +
+                            '                  <a href="/DCOneCenter/Ecosystem" class="projectlinkblock w-inline-block">' +
                             '                      <div' +
                             '                        style="background-image:url(/view-resources/Views/DCOneCenter/ImagesProject/' + resp.result.dataProjectsIndustres[i].listProject[j].logo+')"' +
                             '                        class="div-block-27">' +

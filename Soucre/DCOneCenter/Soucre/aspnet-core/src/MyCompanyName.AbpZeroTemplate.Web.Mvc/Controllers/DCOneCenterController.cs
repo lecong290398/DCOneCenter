@@ -30,6 +30,9 @@ namespace MyCompanyName.AbpZeroTemplate.Web.Controllers
             _binaryObjectManager = binaryObjectManager;
             _projectIndustriesClientAppService = projectIndustriesClientAppService;
         }
+
+        #region Index
+
         public async Task<IActionResult> Index()
         {
 
@@ -85,6 +88,11 @@ namespace MyCompanyName.AbpZeroTemplate.Web.Controllers
             }
         }
 
+        #endregion
+
+
+        #region Ecosystem
+
 
         public async Task<IActionResult> Ecosystem()
         {
@@ -107,5 +115,47 @@ namespace MyCompanyName.AbpZeroTemplate.Web.Controllers
             }
         }
 
+        #endregion
+
+        #region promote
+
+
+        public async Task<IActionResult> Promote()
+        {
+            return View();
+        }
+
+
+
+
+        #endregion
+
+        #region partner-contact
+
+        public async Task<IActionResult> PartnerContact()
+        {
+            return View();
+        }
+
+
+        #endregion
+
+        #region Contact
+        public async Task<IActionResult> Contact()
+        {
+            return View();
+        }
+
+        #endregion
+
+
+        #region AddProject
+
+        public async Task<IActionResult> AddProject()
+        {
+            return View();
+        }
+
+        #endregion
     }
 }
